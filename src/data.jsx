@@ -33,6 +33,26 @@ export const PROJECTS = [
     github: "https://github.com/Aniruddhchilla2407/zerocopy-net-stack",
   },
   {
+    id: "trade-ops-dashboard",
+    title: "Trade Ops Dashboard",
+    category: "Full Stack",
+    stack: ["Django", "DRF", "React", "PostgreSQL"],
+    match: 95,
+    logline: "An internal-style trading ops platform that catches trade mismatches before they become real problems.",
+    synopsis:
+      "A full-stack reconciliation platform modeling the internal tooling used at trading firms: ops upload internal and external trade files, a custom matching engine flags discrepancies as typed breaks, and a live dashboard tracks positions and open issues end to end.",
+    highlights: [
+      "Reconciliation engine matching internal book-of-record trades against externally ingested trade files by symbol/side/quantity/counterparty, with price-tolerance checks and typed break classification (unmatched, price mismatch)",
+      "Idempotent, re-runnable reconciliation pass — safe to trigger repeatedly for the same trade date without duplicating breaks, enabling both manual and scheduled triggers on one code path",
+      "Weighted-average position cost recomputed from the internal trade ledger on every reconciliation run",
+      "CSV ingestion pipeline for bulk trade uploads, with row-level validation and error reporting",
+      "React (Vite) dashboard with polling-based live trade monitoring, break resolution workflow, and filterable views",
+      "Django REST Framework API backed by PostgreSQL, validated with a pytest suite and GitHub Actions CI",
+    ],
+    stat: { value: "7", label: "test suite (pytest)" },
+    github: "https://github.com/Aniruddhchilla2407/TradeOps---Dashboard",
+  },
+  {
     id: "distributed-systems-lab",
     title: "Distributed Systems Lab",
     category: "Distributed Systems",
@@ -94,12 +114,12 @@ export const EXPERIENCE = {
   company: "TechOptima, Hyderabad, India",
   dates: "Apr 2025 – Jun 2025",
   synopsis:
-    "Embedded on a team shipping backend services and monitoring tooling for internal AI-driven credit analysis systems.",
+    "Contributed to AI-assisted credit analysis workflows for corporate and retail use cases, supporting data validation, document processing, and structured output generation.",
   highlights: [
-    "Designed and implemented scalable backend services and REST APIs supporting credit analysis workflows and internal AI systems",
-    "Built modular workflows for data ingestion, validation, transformation, and processing to improve consistency and reliability",
-    "Developed monitoring dashboards to track system health, model performance, and operational metrics for production workflows",
-    "Participated in code reviews, debugging sessions, sprint-based development, and cross-functional collaboration",
+    "Designed backend services and REST APIs for internal AI systems and financial analysis workflows",
+    "Built modular data workflows for ingestion, validation, transformation, and processing to improve pipeline consistency",
+    "Assisted development of Opt Legal and Opt Grad, contributing to backend/API functionality and workflow integration",
+    "Participated in code reviews, debugging, sprint-based development, and cross-functional collaboration",
   ],
 };
 
@@ -108,7 +128,7 @@ export const SKILL_ROWS = [
   { label: "Frameworks", items: ["FastAPI", "Django", "Node.js", "Express.js", "React.js"] },
   {
     label: "Data & Infra",
-    items: ["PostgreSQL", "Redis", "MongoDB", "MySQL", "SQLite", "Docker", "GitHub Actions", "AWS EC2/S3", "GCP"],
+    items: ["PostgreSQL", "Redis", "MongoDB", "MySQL", "SQLite", "Docker", "GitHub Actions", "AWS EC2/S3/Lambda", "GCP"],
   },
   {
     label: "Core Concepts",
