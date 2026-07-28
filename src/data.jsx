@@ -53,6 +53,24 @@ export const PROJECTS = [
     github: "https://github.com/Aniruddhchilla2407/TradeOps---Dashboard",
   },
   {
+    id: "pricewatch",
+    title: "PriceWatch",
+    category: "Full Stack",
+    stack: ["Python", "Scheduler", "Notifications", "React"],
+    match: 90,
+    logline: "A price-drop and restock tracker that watches products for you and tells you the moment it's worth buying.",
+    synopsis:
+      "An in-progress e-commerce price tracker: a scheduled crawler pipeline monitors product pages for price and stock changes, with a notification layer alerting users the moment a tracked item drops in price or comes back in stock.",
+    highlights: [
+      "Scheduler/crawler service polling tracked product pages on a recurring schedule, with rate limiting and deduplication to avoid redundant requests",
+      "Change-detection pipeline flagging price drops and restocks against historical data",
+      "Notification system (email/SMS/push) triggered on detected price drops",
+      "Dashboard for tracking wishlist items with historical price charts",
+    ],
+    stat: { value: "In Progress", label: "actively building" },
+    github: "https://github.com/Aniruddhchilla2407/Smart-Restocker", 
+  },
+  {
     id: "distributed-systems-lab",
     title: "Distributed Systems Lab",
     category: "Distributed Systems",
@@ -108,6 +126,17 @@ export const PROJECTS = [
     github: "https://github.com/Aniruddhchilla2407/llm-eval-bench",
   },
 ];
+
+export const CONTINUE_WATCHING = [
+  {
+    id: "pricewatch-build",
+    projectId: "pricewatch", // ← links this card to the PriceWatch project entry
+    title: "PriceWatch",
+    note: "Building the scheduler, notification system, and tracking dashboard",
+    progress: 20, // TODO: update as you go
+  },
+];
+
 
 export const EXPERIENCE = {
   role: "AI Software Engineer Intern",
