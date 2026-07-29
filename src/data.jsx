@@ -169,7 +169,6 @@ export const EDUCATION = {
   school: "GITAM University, Vizag, Andhra Pradesh",
   degree: "B.Tech in Computer Science Engineering",
   dates: "Sep 2022 – Apr 2026",
-  detail: "CGPA: 7.8/10",
   coursework:
     "Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, Probability & Statistics, Linear Algebra",
 };
