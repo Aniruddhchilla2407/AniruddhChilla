@@ -9,7 +9,7 @@ export default function ContactPage() {
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4">
         <h1 className="font-display text-4xl mb-3">Get in touch</h1>
         <p className="text-[#d8d8d4] mb-6">
-          Open to SDE roles, with a focus on backend and distributed systems.
+          Open to Software Development and AI Engineering roles, with a primary focus on backend systems, distributed systems, and applied AI.
         </p>
         <a
           href={`mailto:${PROFILE.email}`}
