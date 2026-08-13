@@ -33,6 +33,24 @@ export const PROJECTS = [
     github: "https://github.com/Aniruddhchilla2407/zerocopy-net-stack",
   },
   {
+    id: "datacontext",
+    title: "DataContext",
+    category: "AI Infrastructure",
+    stack: ["Python", "FastAPI", "PostgreSQL", "MCP SDK", "React"],
+    match: 96,
+    logline: "An MCP-powered context layer that stops LLM agents from guessing what your data actually means.",
+    synopsis:
+      "A context layer that grounds LLM agents in schema metadata, business definitions, lineage, and trust signals before they query enterprise data — reducing hallucinated interpretations of ambiguous columns and making agent answers auditable against real business rules.",
+    highlights: [
+      "Ran controlled before/after comparisons of agent responses on identical questions using Groq/Llama 3.3, demonstrating measurable correctness differences — e.g. correctly resolving a misleading is_active column via an authoritative business-glossary rule",
+      "Exposed the context layer as both a REST API and a 7-tool MCP server, letting any MCP-compatible agent consult schema, glossary, lineage, and trust metadata via tool calls — validated end-to-end with Claude Desktop",
+      "Architected a shared service layer consumed identically by both the REST and MCP interfaces, avoiding logic duplication between the two access paths",
+      "Validated with a 23-test pytest suite and GitHub Actions CI",
+    ],
+    stat: { value: "7-tool", label: "MCP server" },
+    github: "https://github.com/Aniruddhchilla2407/datacontext",
+  },
+  {
     id: "trade-ops-dashboard",
     title: "Trade Ops Dashboard",
     category: "Full Stack",
