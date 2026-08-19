@@ -32,6 +32,24 @@ export const PROJECTS = [
     stat: { value: "7.27M", label: "packets/sec" },
     github: "https://github.com/Aniruddhchilla2407/zerocopy-net-stack",
   },
+    {
+    id: "pegboard-lite",
+    title: "Actor-orchestration",
+    category: "Systems",
+    stack: ["Rust", "Tokio", "Actor Model"],
+    match: 98,
+    logline: "An actor-model runtime built from scratch in Rust — a direct deep dive into the pattern behind Rivet's Pegboard.",
+    synopsis:
+      "A from-scratch actor orchestration runtime in Rust, built as a self-directed deep dive into the actor-supervisor pattern used in production distributed systems — designed to directly parallel Rivet's Pegboard, which orchestrates actors for game server infrastructure.",
+    highlights: [
+      "Isolated async actors with mailbox-based message passing (mpsc) and request/response via oneshot channels — no shared-memory state between actors",
+      "Panic-safe supervision using catch_unwind: crashed actors are detected, logged, and automatically restarted with fresh state via exponential backoff, without taking down other actors or the process",
+      "Generic Actor trait + registry (UUID → mailbox lookup) so any actor type can be spawned and supervised through one clean system API (spawn/send)",
+      "Verified with 11 passing unit + integration tests covering mailbox delivery, crash recovery, and multi-actor state isolation",
+    ],
+    stat: { value: "11", label: "unit + integration tests" },
+    github: "https://github.com/Aniruddhchilla2407/Actor-orchestration", // TODO: confirm this is the actual repo URL
+  },
   {
     id: "datacontext",
     title: "DataContext",
