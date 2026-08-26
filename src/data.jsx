@@ -68,6 +68,25 @@ export const PROJECTS = [
     stat: { value: "7-tool", label: "MCP server" },
     github: "https://github.com/Aniruddhchilla2407/datacontext",
   },
+    {
+    id: "agent-ops-console",
+    title: "Agent Ops Console",
+    category: "Full Stack",
+    stack: ["Node.js", "Express", "TypeScript", "React", "PostgreSQL", "Redis"],
+    match: 93,
+    logline: "A real-time ops dashboard for monitoring long-running agent workflows that survive restarts and human approval steps.",
+    synopsis:
+      "A real-time operations dashboard for monitoring long-running, multi-step agent workflows spanning external systems and human approval points, built on an MVC-structured Express backend with Postgres-backed durable state.",
+    highlights: [
+      "Durable workflow state machine with explicit transition validation per step type, persisted to Postgres so execution survives server restarts with zero in-memory state",
+      "Exponential backoff with jitter for external-call retries, plus a background scheduler that resumes stuck workflows on startup — verified via injected failure simulation",
+      "Redis pub/sub → Server-Sent Events pipeline for live workflow updates to the React frontend, filtered per-workflow to minimize unnecessary client traffic",
+      "Session-based authentication with bcrypt password hashing, IP-based login rate limiting, account lockout, and honeypot/timing-based bot protection",
+      "React + TypeScript timeline UI visualizing step status, retry attempts, and human-approval actions in real time, backed by a JSON-configurable workflow template system",
+    ],
+    stat: { value: "0", label: "in-memory state (fully durable)" },
+    github: "https://github.com/Aniruddhchilla2407/Agent-Ops-Console", // TODO: confirm actual repo URL
+  },
   {
     id: "trade-ops-dashboard",
     title: "Trade Ops Dashboard",

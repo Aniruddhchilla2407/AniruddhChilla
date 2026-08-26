@@ -54,9 +54,7 @@ export default function ProjectsPage() {
     ["Concurrency", "Developer Tooling"].includes(p.category)
   );
 
-  const fullstack = PROJECTS.filter(
-    (p) => p.category === "Full Stack"
-  );
+  const fullstack = PROJECTS.filter((p) => p.category === "Full Stack");
 
   const aiInfra = PROJECTS.filter((p) =>
     ["AI Infrastructure", "Developer Tooling"].includes(p.category)
