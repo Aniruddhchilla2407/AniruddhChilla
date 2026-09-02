@@ -32,7 +32,25 @@ export const PROJECTS = [
     stat: { value: "7.27M", label: "packets/sec" },
     github: "https://github.com/Aniruddhchilla2407/zerocopy-net-stack",
   },
-    {
+  {
+    id: "lockfree-feed-handler",
+    title: "Lock-Free Market Data Feed Handler",
+    category: "Systems",
+    stack: ["C", "POSIX Threads", "Linux"],
+    match: 98,
+    logline: "A lock-free market data pipeline hitting 25M ticks/sec — built to prove exactly how much a lock costs you.",
+    synopsis:
+      "A multi-threaded market data pipeline in C using a lock-free SPSC ring buffer to pass simulated tick data between producer and consumer threads with zero locks, paired with a per-symbol order book tracking live best bid/ask from streamed updates.",
+    highlights: [
+      "Lock-free SPSC ring buffer using C11 atomics, acquire/release memory ordering, and cache-line-padded indices to prevent false sharing",
+      "Per-symbol order book tracking live best bid/ask from streamed tick updates, alongside a simulated multi-symbol tick generator modeling real-time market data feeds",
+      "Benchmarked against a mutex-protected baseline with an identical interface across workloads up to 10M ticks: 4-6x higher throughput (up to 25M ticks/sec) and 3-6x lower p99 latency, with the mutex baseline showing tail-latency spikes up to 3.5ms under lock contention",
+      "Validated correctness under real concurrent execution with a dedicated test suite (500K sequential ticks, zero loss/corruption), automated via GitHub Actions CI",
+    ],
+    stat: { value: "25M", label: "ticks/sec" },
+    github: "https://github.com/Aniruddhchilla2407/Lockfree-feed-handler",
+  },
+  {
     id: "pegboard-lite",
     title: "Actor-orchestration",
     category: "Systems",
@@ -68,7 +86,7 @@ export const PROJECTS = [
     stat: { value: "7-tool", label: "MCP server" },
     github: "https://github.com/Aniruddhchilla2407/datacontext",
   },
-    {
+  {
     id: "agent-ops-console",
     title: "Agent Ops Console",
     category: "Full Stack",
@@ -237,5 +255,5 @@ export const ABOUT = {
     "Applied AI/ML systems — building and evaluating LLM-backed tools, with interest in the engineering side of AI infrastructure",
   ],
   roles:
-    "Currently looking for software engineer roles, with a focus on backend systems, distributed systems, and infrastructure — alongside a growing interest in AI/ML engineering.",
+    "Currently looking for Software Engineer, AI Engineer, and Forward Deployed Engineer roles, with a focus on backend systems, distributed systems, and infrastructure — alongside a growing interest in AI/ML engineering.",
 };
