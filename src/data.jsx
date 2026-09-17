@@ -32,6 +32,25 @@ export const PROJECTS = [
     stat: { value: "7.27M", label: "packets/sec" },
     github: "https://github.com/Aniruddhchilla2407/zerocopy-net-stack",
   },
+    {
+    id: "tcp-load-balancer",
+    title: "TCP Load Balancer (L4)",
+    category: "Systems",
+    stack: ["C++20", "Linux (epoll)", "CMake"],
+    match: 96,
+    logline: "A single-threaded, event-driven L4 load balancer that survived its own use-after-free bugs to hit zero socket errors.",
+    synopsis:
+      "A single-threaded L4 (transport-layer) TCP load balancer in C++ using epoll for non-blocking, event-driven I/O — with a full asynchronous connection lifecycle, pluggable backend selection, and timerfd-driven health checking to route around failed backends.",
+    highlights: [
+      "Full asynchronous connection lifecycle: non-blocking connect() with EPOLLOUT completion detection, and partial-write buffering with backpressure handling to correctly relay data under kernel socket-buffer pressure",
+      "Pluggable backend-selection layer (round robin, least-connections) via virtual dispatch over a fixed-capacity backend pool, paired with a timerfd-driven health checker using consecutive-failure thresholds to prevent flapping and reroute traffic within seconds",
+      "Diagnosed and resolved multiple heap-use-after-free bugs in event-loop callback lifetime management using AddressSanitizer, caused by std::function closures mutating their own backing storage mid-execution — fixed by snapshotting captured state before any self-referential epoll_ctl operation",
+      "Benchmarked with wrk at 100 concurrent connections across 3 backends: 416 req/sec with zero socket errors, validated against a direct-to-backend baseline (307 req/sec) to isolate the environment as the throughput ceiling rather than the load balancer",
+      "Verified with unit tests (backend selection, health-aware routing) and an end-to-end integration test driving real traffic through the compiled binary, automated via GitHub Actions CI",
+    ],
+    stat: { value: "0", label: "socket errors" },
+    github: "https://github.com/Aniruddhchilla2407/tcp-load-balancer", // TODO: confirm actual repo URL
+  },
   {
     id: "lockfree-feed-handler",
     title: "Lock-Free Market Data Feed Handler",
