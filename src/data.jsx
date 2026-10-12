@@ -105,6 +105,24 @@ export const PROJECTS = [
     stat: { value: "7-tool", label: "MCP server" },
     github: "https://github.com/Aniruddhchilla2407/datacontext",
   },
+    {
+    id: "voice-support-agent",
+    title: "Voice-Driven Support Agent",
+    category: "AI Infrastructure",
+    stack: ["Python", "Groq Whisper", "edge-tts", "Tool Calling"],
+    match: 94,
+    logline: "A voice agent that listens, calls live tools, and answers back in the language you spoke.",
+    synopsis:
+      "An end-to-end voice agent pipeline: speech-to-text, an LLM agent that decides when to call backend tools for live data, and text-to-speech replies, all in the language the user spoke.",
+    highlights: [
+      "End-to-end pipeline: speech-to-text (Groq-hosted Whisper), an LLM agent with tool calling to fetch live data (order status, weather), and text-to-speech replies via edge-tts",
+      "Tool-calling loop where the agent decides when to call a backend tool based on user intent, then feeds results back into the model to compose a natural, spoken-style reply",
+      "Validated across English, Hindi, and Telugu using the Mozilla Common Voice dataset, confirming accurate transcription and language-matched responses",
+      "Sanity-test suite covering each pipeline stage (STT, tool-calling agent, TTS) and the full end-to-end flow",
+    ],
+    stat: { value: "3", label: "languages (EN / HI / TE)" },
+    github: "https://github.com/Aniruddhchilla2407/Voice---Support---Agent", 
+  },
   {
     id: "agent-ops-console",
     title: "Agent Ops Console",
